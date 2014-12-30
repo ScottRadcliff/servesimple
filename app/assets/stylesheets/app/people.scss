@@ -1,0 +1,7 @@
+table tr .action {
+  opacity: 0;
+}
+
+table tr:hover .action {
+  opacity: 1;
+}

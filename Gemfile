@@ -8,6 +8,7 @@ gem 'rails', '4.2.0'
 gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'pg', '0.17.1' # Postgresql database
 gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the API
+gem 'faker', '1.4.3' # Generate fake names, addresses, etc.
 gem 'unicorn'
 
 # Assets
@@ -24,6 +25,7 @@ group :development, :test do
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'spring' # Speeds up development by keeping application running in the background
   gem 'web-console', '~> 2.0' # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'quiet_assets', '1.1.0' # Remove noisy asset requests from log
 end
 
 group :production do

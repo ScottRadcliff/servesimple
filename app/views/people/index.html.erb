@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-12 main">
+    <h1 class="page-header">People (<%= number_with_delimiter @people.size %>)</h1>
+
+    <div class="table-responsive">
+      <table class="table table-condensed table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Date of birth</th>
+            <th>Roles</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @people.each do |person| %>
+            <tr>
+              <td><%= person.name %></td>
+              <td><%= person.gender %></td>
+              <td><%= person.phone %></td>
+              <td><%= person.email %></td>
+              <td><%= person.date_of_birth %></td>
+              <td>
+                <span class="label label-default">Patron</span>
+                <span class="label label-primary">Volunteer</span>
+              </td>
+              <td><%= link_to 'Show', person, class: 'action' %></td>
+              <td><%= link_to 'Edit', edit_person_path(person), class: 'action' %></td>
+              <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }, class: 'action' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+<%= link_to 'New Person', new_person_path %>
