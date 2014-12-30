@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
+
 ruby '2.2.0'
 
 gem 'rails', '4.2.0'
@@ -16,6 +18,7 @@ gem 'sass-rails', '~> 5.0' # Sass/Scss for stylesheets
 gem 'uglifier', '>= 1.3.0' # Compressor for JavaScript assets
 gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.3.1'
+gem 'rails-assets-typeahead.js'
 
 group :development, :test do
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
