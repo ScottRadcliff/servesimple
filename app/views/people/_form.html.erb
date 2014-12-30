@@ -1,37 +1,17 @@
-<%= form_for(@person) do |f| %>
-  <% if @person.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+<%= bootstrap_form_for(@person, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+  <%= f.alert_message "Please fix the errors below.", error_summary: false %>
+  <%= f.text_field :name %>
 
-      <ul>
-      <% @person.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+  <%= f.form_group :gender, label: { text: "Gender" } do %>
+    <%= f.radio_button :gender, "", label: "Unknown", inline: true %>
+    <%= f.radio_button :gender, "M", label: "Male", inline: true %>
+    <%= f.radio_button :gender, "F", label: "Female", inline: true %>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :date_of_birth %><br>
-    <%= f.date_select :date_of_birth %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.phone_field :phone, control_col: "col-sm-4" %>
+  <%= f.email_field :email %>
+
+  <%= f.form_group do %>
+    <%= f.primary "Save" %>
+  <% end %>
 <% end %>

@@ -4,7 +4,7 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @people = Person.order(:name)
+    @people = Person.order(:name).limit(100)
   end
 
   # GET /people/1

@@ -9,7 +9,8 @@ gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.
 gem 'pg', '0.17.1' # Postgresql database
 gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the API
 gem 'faker', '1.4.3' # Generate fake names, addresses, etc.
-gem 'unicorn'
+gem 'unicorn' # Webserver
+gem 'bootstrap_form', '2.2.0' # Form helpers for Bootstrap
 
 # Assets
 gem 'coffee-rails', '~> 4.1.0' # CoffeeScript for .coffee assets and views

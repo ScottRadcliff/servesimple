@@ -16,3 +16,5 @@
 //= require turbolinks
 //= require typeahead.js
 //= require_tree ./app
+
+Turbolinks.enableProgressBar();
