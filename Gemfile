@@ -5,6 +5,7 @@ ruby '2.2.0'
 
 gem 'rails', '4.2.0'
 
+gem 'awesome_print'
 gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'pg', '0.17.1' # Postgresql database
 gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the API
@@ -22,6 +23,13 @@ gem 'bootstrap-sass', '~> 3.3.1'
 gem 'rails-assets-typeahead.js'
 
 group :development, :test do
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'spring' # Speeds up development by keeping application running in the background
   gem 'web-console', '~> 2.0' # Access an IRB console on exception pages or by using <%= console %> in views
