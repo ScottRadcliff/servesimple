@@ -18,7 +18,6 @@ gem 'jquery-rails' # JavaScript library
 gem 'neat', '1.7.0' # Lightweight semantic grid framework for Sass and Bourbon
 gem 'sass-rails', '~> 5.0' # Sass/Scss for stylesheets
 gem 'uglifier', '>= 1.3.0' # Compressor for JavaScript assets
-gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'rails-assets-typeahead.js'
 
