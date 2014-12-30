@@ -3,5 +3,4 @@ FactoryGirl.define do
     subdomain "idhc"
     name "Iglesia Dedios Hermandad Cristiana"
   end
-
 end
