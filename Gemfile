@@ -15,6 +15,7 @@ gem 'neat', '1.7.0' # Lightweight semantic grid framework for Sass and Bourbon
 gem 'sass-rails', '~> 5.0' # Sass/Scss for stylesheets
 gem 'uglifier', '>= 1.3.0' # Compressor for JavaScript assets
 gem 'turbolinks'
+gem 'bootstrap-sass', '~> 3.3.1'
 
 group :development, :test do
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
