@@ -9,6 +9,8 @@ feature "Searching people", :type => :feature do
 
   scenario "in our account" do
     Person.import
+    # Wait for Elasticseach to index
+    sleep 2
 
     visit people_url(q: 'brown', subdomain: account.subdomain)
 
