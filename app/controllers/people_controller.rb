@@ -4,7 +4,7 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @people = Person.order(:name).limit(100)
+    @people = @account.people.order(:name).limit(100)
   end
 
   # GET /people/1
@@ -24,7 +24,7 @@ class PeopleController < ApplicationController
   # POST /people
   # POST /people.json
   def create
-    @person = Person.new(person_params)
+    @person = @account.people.new(person_params)
 
     respond_to do |format|
       if @person.save
@@ -64,7 +64,7 @@ class PeopleController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_person
-      @person = Person.find(params[:id])
+      @person = @account.people.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

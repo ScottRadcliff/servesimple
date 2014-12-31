@@ -1,6 +1,8 @@
 class Account < ActiveRecord::Base
   RESTRICTED_SUBDOMAINS = %w[www admin webmail mail]
 
+  has_many :people
+
   validates :subdomain, presence: true,
                         uniqueness: { case_sensitive: false },
                         format: { with: /\A[\w\-]+\Z/i, message: 'contains invalid characters' },
