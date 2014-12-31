@@ -65,6 +65,8 @@
         <div class="col-md-12 flash">
           <% flash.each do |name, msg| -%>
             <%- name = "success" if name == "notice" %>
+            <%- name = "danger" if name == "alert" %>
+
             <div class="alert alert-<%= name %>" role="alert"><%= msg %></div>
           <% end -%>
         </div>
