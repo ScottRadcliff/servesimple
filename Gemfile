@@ -5,7 +5,8 @@ ruby '2.2.0'
 
 gem 'rails', '4.2.0'
 
-gem 'awesome_print'
+gem 'awesome_print' # Pretty output for objects using `ap`
+gem 'devise', '3.4.1' # User login and authentication
 gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'pg', '0.17.1' # Postgresql database
 gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the API
