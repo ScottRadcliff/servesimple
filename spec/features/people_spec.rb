@@ -1,5 +1,23 @@
 require 'rails_helper'
 
+feature "Searching people", :type => :feature do
+  let!(:account) { create(:account) }
+  let!(:account_2) { create(:account, subdomain: 'fft', name: 'Food for Thought') }
+  let!(:role) { create(:role, name: 'Volunteer', account: account) }
+  let!(:person) { create(:person, name: 'Marsh, Kevin', account: account, roles: [role], password: 'testing123') }
+  let!(:person_2) { create(:person, name: 'Brown, Joe', account: account) }
+
+  scenario "in our account" do
+    Person.import
+
+    visit people_url(q: 'brown', subdomain: account.subdomain)
+
+    sign_in(person, 'testing123')
+
+    expect(page).to have_content 'Brown, Joe'
+  end
+end
+
 feature "Listing people", :type => :feature do
   let!(:account) { create(:account) }
   let!(:account_2) { create(:account, subdomain: 'fft', name: 'Food for Thought') }

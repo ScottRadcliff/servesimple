@@ -33,13 +33,13 @@ var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
   'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
 ];
 
-$('.autocomplete').typeahead({
-  hint: true,
-  highlight: true,
-  minLength: 1
-},
-{
-  name: 'states',
-  displayKey: 'value',
-  source: substringMatcher(states)
-});
+// $('.autocomplete').typeahead({
+//   hint: true,
+//   highlight: true,
+//   minLength: 1
+// },
+// {
+//   name: 'states',
+//   displayKey: 'value',
+//   source: substringMatcher(states)
+// });

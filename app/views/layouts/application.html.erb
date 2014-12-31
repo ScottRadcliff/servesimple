@@ -53,9 +53,9 @@
               <li><%= link_to('Sign in', new_person_session_path) %></li>
             <% end %>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control autocomplete" placeholder="Search...">
-          </form>
+          <%= form_tag(people_path, method: :get, class: 'navbar-form navbar-right') do %>
+            <%= text_field_tag "q", "", class: "form-control autocomplete", placeholder: "Search" %>
+          <% end %>
         </div>
       </div>
     </nav>
