@@ -14,6 +14,8 @@ gem 'unicorn' # Webserver
 gem 'bootstrap_form', '2.2.0' # Form helpers for Bootstrap
 gem 'devise', '3.4.1'
 gem 'progress_bar' # Pretty progress bars on the command line
+gem 'elasticsearch-rails', '0.1.6' # Use ElasticSearch for search backend
+gem 'elasticsearch-model', '0.1.6' # ActiveModel/Record integrations for ElasticSearch
 
 # Assets
 gem 'coffee-rails', '~> 4.1.0' # CoffeeScript for .coffee assets and views
