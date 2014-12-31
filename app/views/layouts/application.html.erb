@@ -41,9 +41,17 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
+            <% if person_signed_in? %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= current_person.name %> <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Settings</a></li>
+                  <li><%= link_to('Sign out', destroy_person_session_path, :method => :delete) %> </li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to('Sign in', new_person_session_path) %></li>
+            <% end %>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control autocomplete" placeholder="Search...">
