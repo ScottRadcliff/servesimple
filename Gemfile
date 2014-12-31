@@ -13,6 +13,7 @@ gem 'faker', '1.4.3' # Generate fake names, addresses, etc.
 gem 'unicorn' # Webserver
 gem 'bootstrap_form', '2.2.0' # Form helpers for Bootstrap
 gem 'devise', '3.4.1'
+gem 'progress_bar' # Pretty progress bars on the command line
 
 # Assets
 gem 'coffee-rails', '~> 4.1.0' # CoffeeScript for .coffee assets and views
