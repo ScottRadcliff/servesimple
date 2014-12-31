@@ -3,6 +3,8 @@ require 'elasticsearch/model'
 class Person < ActiveRecord::Base
   include Elasticsearch::Model
 
+  index_name "people_#{Rails.env}"
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

@@ -33,7 +33,6 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'elasticsearch-extensions'
   gem 'shoulda-matchers'
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'spring' # Speeds up development by keeping application running in the background

@@ -3,7 +3,6 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'database_cleaner'
 require 'capybara/rspec'
-require 'elasticsearch/extensions/test/cluster'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -31,16 +30,6 @@ RSpec.configure do |config|
   config.include Features::SessionHelpers, type: :feature
 
   config.order = "random"
-
-  config.before :suite do
-    ap ENV
-    # Elasticsearch::Extensions::Test::Cluster.start(nodes: 1, port: 9205) unless Elasticsearch::Extensions::Test::Cluster.running?
-    # Elasticsearch::Model.client = Elasticsearch::Client.new host: 'http://localhost:9205'
-  end
-
-  config.after :suite do
-    # Elasticsearch::Extensions::Test::Cluster.stop if Elasticsearch::Extensions::Test::Cluster.running?
-  end
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
