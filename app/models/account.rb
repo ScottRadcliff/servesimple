@@ -2,6 +2,7 @@ class Account < ActiveRecord::Base
   RESTRICTED_SUBDOMAINS = %w[www admin webmail mail]
 
   has_many :people
+  has_many :roles
 
   validates :subdomain, presence: true,
                         uniqueness: { case_sensitive: false },

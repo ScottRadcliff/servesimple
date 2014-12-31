@@ -11,6 +11,8 @@
   <%= f.phone_field :phone, control_col: "col-sm-4" %>
   <%= f.email_field :email %>
 
+  <%= f.collection_check_boxes :role_ids, @account.roles.order('name'), :id, :name %>
+
   <%= f.form_group do %>
     <%= f.primary "Save" %>
   <% end %>
