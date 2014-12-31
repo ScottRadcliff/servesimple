@@ -9,9 +9,7 @@ describe 'Login' do
   it 'succeeds with correct password to correct domain' do
     visit new_person_session_url(subdomain: account.subdomain)
 
-    fill_in 'Email', with: person.email
-    fill_in 'Password', with: 'testing123'
-    click_button 'Log in'
+    sign_in(person, 'testing123')
 
     expect(page).to have_content('Signed in successfully.')
 
@@ -22,19 +20,14 @@ describe 'Login' do
   it 'fails with incorrect password to correct domain' do
     visit new_person_session_url(subdomain: account.subdomain)
 
-    fill_in 'Email', with: person.email
-    fill_in 'Password', with: 'testing1234'
-    click_button 'Log in'
-
+    sign_in(person, 'obviouslybadpassword')
     expect(page).to have_content('Invalid email or password.')
   end
 
   it 'fails with correct password to incorrect domain' do
     visit new_person_session_url(subdomain: account_2.subdomain)
 
-    fill_in 'Email', with: person.email
-    fill_in 'Password', with: 'testing123'
-    click_button 'Log in'
+    sign_in(person, 'testing123')
 
     expect(page).to have_content('Invalid email or password.')
   end
