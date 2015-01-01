@@ -13,5 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require typeahead.js
 //= require_tree ./app
