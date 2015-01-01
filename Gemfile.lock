@@ -49,6 +49,9 @@ GEM
       sass (~> 3.3)
       thor
     builder (3.2.2)
+    bullet (4.14.0)
+      activesupport (>= 3.0.0)
+      uniform_notifier (>= 1.6.0)
     byebug (3.5.1)
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
@@ -268,6 +271,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    uniform_notifier (1.6.2)
     warden (1.2.3)
       rack (>= 1.0)
     web-console (2.0.0)
@@ -285,6 +289,7 @@ DEPENDENCIES
   awesome_print
   bootstrap-sass (~> 3.3.1)
   bootstrap_form (= 2.2.0)
+  bullet
   byebug
   capybara
   coffee-rails (~> 4.1.0)

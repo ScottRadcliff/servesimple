@@ -16,7 +16,7 @@ class PeopleController < ApplicationController
                    size: 10
       @people = response.records
     else
-      @people = @account.people.order(:name).limit(100)
+      @people = @account.people.order(:name).limit(100).includes(:roles)
     end
   end
 

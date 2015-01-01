@@ -27,6 +27,7 @@ gem 'bootstrap-sass', '~> 3.3.1'
 gem 'rails-assets-typeahead.js'
 
 group :development, :test do
+  gem 'bullet' # Detect expensive N+1 queries
   gem 'guard'
   gem 'guard-rspec'
   gem 'rspec-rails'
