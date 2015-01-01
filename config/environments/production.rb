@@ -44,9 +44,14 @@ Rails.application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
+  config.lograge.enabled = true
+  config.lograge.custom_options = lambda do |event|
+    { time: event.time.iso8601, subdomain: event.payload[:subdomain], user: event.payload[:user], es: event.payload[:elasticsearch_runtime].to_f.round(2) }
+  end
+
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
-  config.log_level = :debug
+  config.log_level = :info
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]

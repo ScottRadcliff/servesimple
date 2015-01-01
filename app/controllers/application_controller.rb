@@ -7,6 +7,12 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
+  def append_info_to_payload(payload)
+    super
+    payload[:subdomain] = request.subdomain
+    payload[:user] = current_person && current_person.email
+  end
+
 private
 
   def record_not_found

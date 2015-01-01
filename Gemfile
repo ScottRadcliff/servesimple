@@ -6,16 +6,17 @@ ruby '2.2.0'
 gem 'rails', '4.2.0'
 
 gem 'awesome_print'
-gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'pg', '0.17.1' # Postgresql database
-gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the API
-gem 'faker', '1.4.3' # Generate fake names, addresses, etc.
-gem 'unicorn' # Webserver
 gem 'bootstrap_form', '2.2.0' # Form helpers for Bootstrap
 gem 'devise', '3.4.1'
-gem 'progress_bar' # Pretty progress bars on the command line
-gem 'elasticsearch-rails', '0.1.6' # Use ElasticSearch for search backend
 gem 'elasticsearch-model', '0.1.6' # ActiveModel/Record integrations for ElasticSearch
+gem 'elasticsearch-rails', '0.1.6' # Use ElasticSearch for search backend
+gem 'faker', '1.4.3' # Generate fake names, addresses, etc.
+gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'lograge' # Cleaner logging (in key=value format ala Heroku)
+gem 'pg', '0.17.1' # Postgresql database
+gem 'progress_bar' # Pretty progress bars on the command line
+gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the API
+gem 'unicorn' # Webserver
 
 # Assets
 gem 'coffee-rails', '~> 4.1.0' # CoffeeScript for .coffee assets and views
