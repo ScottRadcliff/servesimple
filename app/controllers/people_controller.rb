@@ -5,19 +5,36 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    if params[:q]
-      response = Person.search \
-                   query: {
-                     filtered: {
-                       query: { query_string: { query: params[:q] } },
-                       filter: { term: { account_id: @account.id } }
-                     }
-                   },
-                   size: 10
-      @people = response.records
+    query = if params[:q]
+      { query_string: { query: params[:q] } }
     else
-      @people = @account.people.order(:name).limit(100).includes(:roles)
+      { match_all: {} }
     end
+
+    @response = Person.search \
+                 query: {
+                   filtered: {
+                     query: query,
+                     filter: { term: { account_id: @account.id } }
+                   }
+                 },
+                 aggs: {
+                   roles: {
+                    nested: {
+                      path: "roles"
+                    },
+                    aggs: {
+                      count: {
+                        terms: {
+                          field: "roles.name"
+                        }
+                      }
+                    }
+                   }
+                 },
+                 size: 25
+
+    @people = @response.records.includes(:roles) #@account.people.order(:name).limit(100).includes(:roles)
   end
 
   # GET /people/1

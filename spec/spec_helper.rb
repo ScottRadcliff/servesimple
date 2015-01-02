@@ -28,6 +28,7 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Features::SessionHelpers, type: :feature
+  config.include Features::IndexHelpers, type: :feature
 
   config.order = "random"
 

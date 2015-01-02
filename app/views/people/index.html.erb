@@ -1,6 +1,13 @@
 <div class="row">
   <div class="col-md-12 main">
-    <h1 class="page-header">People (<%= number_with_delimiter @people.size %> of <%= number_with_delimiter @account.people.count %>)</h1>
+    <h1 class="page-header">People</h1>
+
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><%= link_to "All (#{number_with_delimiter(@response.response.aggregations.roles.doc_count)})", "#" %></li>
+      <% @response.response.aggregations.roles[:count].buckets.each do |bucket| %>
+        <li role="presentation"><%= link_to "#{bucket[:key]} (#{number_with_delimiter(bucket[:doc_count])})", "#" %></li>
+      <% end %>
+    </ul>
 
     <div class="table-responsive">
       <table class="table table-condensed table-hover">
