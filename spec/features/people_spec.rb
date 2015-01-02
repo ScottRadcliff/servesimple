@@ -109,6 +109,10 @@ feature "Adding people", :type => :feature do
   let!(:person) { create(:person, name: 'Marsh, Kevin', account: account, roles: [role], password: 'testing123') }
   let!(:person_2) { create(:person, name: 'Smith, Joe', account: account_2, password: 'testing123') }
 
+  before do
+    index_people
+  end
+
   scenario "with valid information" do
     visit people_url(subdomain: account.subdomain)
 
