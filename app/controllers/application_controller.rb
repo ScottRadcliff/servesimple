@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def append_info_to_payload(payload)
     super
     payload[:subdomain] = request.subdomain
-    payload[:user] = current_person && current_person.email
+    payload[:user] = current_person && current_person.email rescue nil
   end
 
 private
@@ -20,6 +20,8 @@ private
   end
 
   def set_account
+    return true if request.subdomain == ""
+
     @account = Account.find_by_subdomain!(request.subdomain)
  end
 end
