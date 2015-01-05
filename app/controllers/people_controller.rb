@@ -11,6 +11,12 @@ class PeopleController < ApplicationController
       { match_all: {} }
     end
 
+    sort = if params[:q]
+      {}
+    else
+      "name.raw"
+    end
+
     @response = Person.search \
                  query: {
                    filtered: {
@@ -32,6 +38,7 @@ class PeopleController < ApplicationController
                     }
                    }
                  },
+                 sort: sort,
                  size: 25
 
     @people = @response.records.includes(:roles) #@account.people.order(:name).limit(100).includes(:roles)

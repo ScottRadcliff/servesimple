@@ -10,7 +10,7 @@ class Person < ActiveRecord::Base
 
   settings index: { number_of_shards: 5, number_of_replicas: 0 } do
     mappings dynamic: 'true' do
-      indexes :name, type: 'string'
+      indexes :name, type: 'string', index: 'analyzed', fields: { raw: { type: 'string', index: :not_analyzed } }
       indexes :gender, type: 'string', index: :not_analyzed
       indexes :roles, type: 'nested' do
         indexes :name, index: :not_analyzed
