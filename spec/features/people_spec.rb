@@ -124,9 +124,6 @@ feature "Adding people", :type => :feature do
     click_button 'Save'
 
     expect(page).to have_content 'Person was successfully created.'
-    expect(page).to have_content 'Marsh, Kevin'
-    expect(page).to have_content 'Volunteer'
-    expect(page).to_not have_content 'Donor'
   end
 
   scenario "missing name" do
