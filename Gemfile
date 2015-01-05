@@ -6,7 +6,6 @@ ruby '2.2.0'
 gem 'rails', '4.2.0' # Full-stack web framework optimized for programmer happiness and sustainable productivity
 
 gem 'awesome_print' # Pretty object printing with `ap`
-gem 'bootstrap_form', '2.2.0' # Form helpers for Bootstrap
 gem 'devise', '3.4.1' # Flexible authentication solution for Rails with Warden
 gem 'elasticsearch-model', '0.1.6' # ActiveModel/Record integrations for ElasticSearch
 gem 'elasticsearch-rails', '0.1.6' # Use ElasticSearch for search backend
@@ -16,6 +15,7 @@ gem 'lograge' # Cleaner logging (One line `key=value key2=value2` format ala Her
 gem 'pg', '0.17.1' # PostgreSQL database
 gem 'progress_bar' # Pretty progress bars on the command line
 gem 'sdoc', '~> 0.4.0', group: :doc # `bundle exec rake doc:rails` generates the API
+gem 'simple_form', '3.1.0' # Form helpers
 gem 'unicorn' # HTTP server for Rack applications
 
 # Assets
