@@ -80,4 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: servesimple_development
+  url: <%= ENV['DATABASE_URL'] %>

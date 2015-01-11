@@ -29,6 +29,8 @@ gem 'uglifier', '>= 1.3.0' # Compressor for JavaScript assets
 group :development, :test do
   gem 'bullet' # Detect expensive N+1 queries
   gem 'byebug' # Call `byebug` anywhere in the code to stop execution and get a debugger console
+  gem 'capistrano',  '~> 3.1' # Deployment
+  gem 'capistrano-rails', '~> 1.1' # Deployment
   gem 'capybara' # Integration testing tool, simulates how a user would interact with a website
   gem 'database_cleaner' # Various strategies for ensuring a clean DB state for testing
   gem 'factory_girl_rails' # Factories: less error-prone, more explicit, and all-around easier to work with than fixtures
